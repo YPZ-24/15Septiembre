@@ -26,6 +26,6 @@ body.onload = () => {
     btnMe.addEventListener('mouseleave', () => cursor.className = 'cursorFilled' )
 
     btnMe.addEventListener('click', () => {
-        window.location.href='../html/me.html';
+        window.location.href='https://ypz-24.github.io/15Septiembre/html/me.html';
     })
 }
