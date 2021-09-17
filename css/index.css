@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani&family=Staatliches&family=Train+One&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: black;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(0deg, rgba(51,204,51,1) 0%, rgba(230,230,230,1) 50%, rgba(204,51,51,1) 100%);
+    border-radius: 10px;
+}
+
+main{
+    position: relative;
+}
+
+#conte-flag{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+}
+
+#conte-flag-wall{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#conte-flag-wall > img{
+    width: 100%;
+    height: 100%;
+}
+
+#conte-flag-backdrop{
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#conteQuestion{
+    position: absolute;
+    color: white;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: opacity 1s;
+}
+
+#conteQuestion > h1{
+    font-size: 4rem;
+    font-family: 'Train One', cursive;
+    text-align: center;
+}
+
+#conteQuestion > h3{
+    font-size: 2rem;
+    font-family: 'Rajdhani', sans-serif;
+    text-align: center;
+}
+
+#conte-btns{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#conte-btns > button{
+    font-family: 'Rajdhani', sans-serif;
+    padding: 10px 40px;
+    border: 1px solid rgb(255, 255, 255);
+    background-color: transparent;
+    color: white;
+    font-size: 1rem;
+    z-index: 150;
+}
+
+#conte-btns > button:hover{
+    cursor: none;
+}
+
+#cursor{
+    position: fixed;
+    z-index: 100;
+    border-radius: 100px;
+    border: 2px solid rgb(255, 255, 255);
+    transition: width 0.5s, height 0.5s;
+}
+
+.cursorFilled{
+    background-color: rgb(255, 255, 255);
+    width: 50px;
+    height: 50px;
+}
+
+.cursorBordered{
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+}
+
+#cursor:hover{
+    cursor: none;
+}
+
+#conte-cards{
+    padding: 30px 0px;
+    position: absolute;
+    top: 0;
+    color: white;
+    width: 100%;
+    justify-items: center;
+    display: grid;
+    opacity: 0;
+    transition: opacity 1s;
+    transition-delay: 1s;
+}
+
+.conte-cards-item{
+    width: 380px;   /*190% of width card*/
+    height: 250px;
+}
+
+.card{
+    width: 200px;
+    height: 250px;
+    position: relative;
+}
+
+.card > img, .card > .card-green{
+    border-radius: 4px;
+}
+
+.card > img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    filter: grayscale(100%);
+}
+
+.card-green{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 99, 0, 0.5);
+}
+
+.card > .card-text{
+    position: absolute;
+    right: -90%;
+    width: 100%;
+    padding: 5px 0px;
+}
+
+.card-text > .card-text-title{
+    font-size: 1.5rem;
+    font-family: 'Train One', cursive;
+}
+
+.card-text > .card-text-subtitle{
+    font-size: 3rem;
+    font-family: 'Staatliches', cursive;
+}
+
+.card-text > .card-text-description{
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+}
+
+
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    #conte-cards{
+        grid-template-columns: 1fr;
+        grid-row-gap: 60px;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    #conte-cards{
+        grid-template-columns: 1fr;
+        grid-row-gap: 60px;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    #conte-cards{
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .conte-cards-item:nth-child(even){
+        margin-top: 125px;
+    }
+}

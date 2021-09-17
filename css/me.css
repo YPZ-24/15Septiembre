@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani&family=Staatliches&family=Train+One&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: black;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(0deg, rgba(51,204,51,1) 0%, rgba(230,230,230,1) 50%, rgba(204,51,51,1) 100%);
+    border-radius: 10px;
+}
+
+body{
+    background-color: black;
+    overflow-x: hidden;
+}
+
+main{
+    position: relative;
+}
+
+#conte-banner{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(5, 5, 5);
+    position: sticky;
+    top: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#conte-banner > img{
+    max-width: 500px;
+    opacity: 0.1;
+}
+
+#conte-text{
+    position: fixed;
+    display: inline-block;
+    background-color: transparent;
+    right: 0;
+    bottom: 0;
+    z-index: 150;
+    color: white;
+    margin: 10px;
+}
+
+#conte-text > h3{
+    font-size: 2rem;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+#conte-gallery{
+    position: sticky;
+    top: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 110%;
+    min-height: 100vh;
+    margin-left: -5%;
+    margin-right: 5%;
+}
+
+.item-gallery{
+    max-height: 150px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    background-color: rgb(19, 19, 19);
+}
+
+.item-gallery > img {
+    width: 100%;
+    height: 100%;
+    filter: grayscale(100%);
+}
+
+.item-gallery:nth-child(odd):hover > img{
+    transform: rotate(2deg);
+    filter: grayscale(0%);
+}
+
+.item-gallery:nth-child(even):hover > img{
+    transform: rotate(-2deg);
+    filter: grayscale(0%);
+}
+
+.item-gallery > .item-gallery-backdrop{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition: opacity 0.5s;
+}
+
+.item-gallery:nth-child(1n+0) > .item-gallery-backdrop{
+    background-color: rgba(40, 158, 40, 0.6)
+}
+
+.item-gallery:nth-child(2n+0) > .item-gallery-backdrop{
+    background-color: rgba(170, 170, 170, 0.6)
+}
+
+.item-gallery:nth-child(3n+0) > .item-gallery-backdrop{
+    background-color: rgba(169, 42, 42, 0.6);
+}
+
+.item-gallery:hover > .item-gallery-backdrop{
+    opacity: 0;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    #conte-gallery{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    #conte-gallery{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    #conte-gallery{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    #conte-gallery{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+}
