@@ -2,7 +2,6 @@ const body = document.querySelector('body')
 const conteGallery = document.querySelector('#conte-gallery')
 const title = document.querySelector('#conte-text > h3')
 const audio = document.querySelector('audio')
-audio.play()
 
 const createItemGallery = ({desc: description, img: imgSrc}) => {
     const itemGallery = document.createElement('div')
@@ -21,6 +20,7 @@ const createItemGallery = ({desc: description, img: imgSrc}) => {
 }
 
 body.onload = () => {
+    audio.play()
     let currentDiv
     conteGallery.addEventListener('mousemove', (e) => {
         if(currentDiv != e.target){
